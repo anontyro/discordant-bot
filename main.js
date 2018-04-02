@@ -1,7 +1,12 @@
 // electron imports
 const electron = require('electron');  
 const {app, BrowserWindow} = electron;
+const ipcMain = electron.ipcMain;
 
+// IPC Renderer
+ipcMain.on('message', (event, args) =>{
+    console.log(event);
+})
 // bot imports
 const botConfig = require('./discordant/config/botconfig.json');
 const Discord = require('discord.js');
