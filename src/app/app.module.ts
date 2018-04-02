@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // third party
 import {NgxElectronModule} from 'ngx-electron';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // Components
 import { AppComponent } from './app.component';
@@ -34,7 +35,8 @@ import {AppRoutes} from './app.router';
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes),
     FormsModule,
-    NgxElectronModule
+    NgxElectronModule,
+    NgbModule.forRoot(),
   ],
   providers: [
     BotApiService,

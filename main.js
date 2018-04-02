@@ -3,10 +3,6 @@ const electron = require('electron');
 const {app, BrowserWindow} = electron;
 const ipcMain = electron.ipcMain;
 
-// IPC Renderer
-ipcMain.on('message', (event, args) =>{
-    console.log(event);
-})
 // bot imports
 const botConfig = require('./discordant/config/botconfig.json');
 const Discord = require('discord.js');
@@ -27,4 +23,5 @@ require('./discordant/bot-api/index')(bot);
 // electron setup
 require('./discordant/electron-api/index')(app);
 
-
+// IPC Renderer
+require('./discordant/electron-api/frontend-api/index')(ipcMain);
