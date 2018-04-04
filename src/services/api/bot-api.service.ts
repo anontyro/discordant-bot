@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 import { Observable } from "rxjs/Observable";
+import 'rxjs/add/observable/fromPromise';
 
 @Injectable()
 export class BotApiService {
@@ -11,8 +12,21 @@ export class BotApiService {
   private asyncReply = 'async-bot-reply';
 
   private onInit(){
-    this.electronService.ipcRenderer.on(this.asyncReply, (event, arg) =>{
-      console.log(arg);
+    this.listenForMessagesObservable().subscribe((msg) =>{
+      console.log(msg);
+    })
+  }
+  
+  private listenForMessagesObservable(): Observable<any> {
+    return Observable.create(observer =>{
+      this.electronService.ipcRenderer.on(this.asyncReply, (event, arg)=>{
+        if(arg) {
+          observer.next(arg);
+        } else{
+          observer.console.error('no value to save');
+          
+        }
+      })
     });
   }
 

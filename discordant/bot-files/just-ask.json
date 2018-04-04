@@ -1,0 +1,18 @@
+{
+    "botDetails" :{
+        "name" : "Just Ask",
+        "token" : "MjAyODQzNDgxNzI1NDY4Njc0.DaIIjg.lKY3ebg0GiGyt6D40l6K5M0AZys",
+        "clientId" : "202843148404260864",
+        "prefix": "!"
+    },
+    "botMessages" : [
+        {"command" : "hello", "send" : "Hello World!"},
+        {"command" : "", "send" : ""},
+        {"command" : "", "send" : ""},
+        {"command" : "", "send" : ""},
+        {"command" : "", "send" : ""},
+        {"command" : "", "send" : ""}
+        
+    ]
+
+}
