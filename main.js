@@ -18,7 +18,7 @@ const bot = new Discord.Client({disableEveryone: true});
 let win;
 
 // Discord JS settings
-require('./discordant/bot-api/index')(bot);
+require('./discordant/bot-api/index')(bot, ipcMain);
 
 // electron setup
 require('./discordant/electron-api/index')(app);

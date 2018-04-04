@@ -1,3 +1,5 @@
+import { BotApiService } from './../../../services/api/bot-api.service';
+import { ElectronApiService } from './../../../services/api/electron-api.service';
 import { Component, OnInit } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 
@@ -8,13 +10,32 @@ import { ElectronService } from 'ngx-electron';
 })
 export class MainLandingViewComponent implements OnInit {
 
-  constructor(private electronService: ElectronService) { }
+  public initBot = false;
 
-  ngOnInit() {
-  }
+  constructor(
+    private electronApiService: ElectronApiService,
+    private botApiService: BotApiService
+  ) { }
+
+  ngOnInit() { }
 
   public onButtonPressed() {
-    this.electronService.ipcRenderer.send('message','test Message');
+    this.botApiService.sendAsyncMessage('test Message');
+  }
+
+  public onBotInitBtn() {
+    this.initBot = !this.initBot;
+
+    this.electronBotInit(this.initBot);
+  }
+
+  private electronBotInit(startBot: boolean) {
+    if(startBot) {
+      this.botApiService.sendAsyncMessage('botCreate');
+    } else {
+      this.botApiService.sendAsyncMessage('botDestroy');
+
+    }
   }
 
 }
