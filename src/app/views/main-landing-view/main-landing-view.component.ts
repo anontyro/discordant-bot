@@ -12,6 +12,8 @@ export class MainLandingViewComponent implements OnInit {
 
   public initBot = false;
 
+  public botName = '';
+
   constructor(
     private electronApiService: ElectronApiService,
     private botApiService: BotApiService
@@ -29,13 +31,21 @@ export class MainLandingViewComponent implements OnInit {
     this.electronBotInit(this.initBot);
   }
 
+  public onBotNamePress() {
+    this.botApiService.setBotName(this.botName);
+  }
+
   private electronBotInit(startBot: boolean) {
-    if(startBot) {
-      this.botApiService.sendAsyncMessage('botCreate');
+    if (startBot) {
+      this.botApiService.createBot();
     } else {
-      this.botApiService.sendAsyncMessage('botDestroy');
+      this.botApiService.destroyBoy();
 
     }
+  }
+
+  public setBotUsername(username: string) {
+    this.botApiService.setBotName(username);
   }
 
 }

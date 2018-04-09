@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ElectronApiService {
@@ -10,8 +10,8 @@ export class ElectronApiService {
   private asyncMsg = 'async-message';
   private asyncReply = 'async-reply';
 
-  private onInit(){
-    this.electronService.ipcRenderer.on(this.asyncReply, (event, arg) =>{
+  private onInit() {
+    this.electronService.ipcRenderer.on(this.asyncReply, (event, arg) => {
       console.log(arg);
     });
   }
