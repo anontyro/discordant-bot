@@ -11,11 +11,12 @@ module.exports =(bot, ipcMain)=>{
     require('../bot-api/messages/index')(bot);
 
     ipcMain.on('async-bot-msg', (event,args) =>{
+        
         let botResponse = {
             "name" : '',
             "timestamp": Date.now(),
-            "action": "",
-            "message": ""
+            "action": '',
+            "message": ''
         }
         if (args === 'botCreate') {
             new Promise ((acc, rej)=>{
@@ -28,6 +29,8 @@ module.exports =(bot, ipcMain)=>{
                 // event.sender.send('async-bot-reply', `name : ${bot.user.username}`)
                 // event.sender.send('async-bot-reply', JSON.stringify(resp))
                 
+            },(err) =>{
+                console.log(err);
             });
         } else if (args === 'botDestroy') {
             bot.destroy().then((response) =>{
