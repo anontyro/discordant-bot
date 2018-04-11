@@ -37,8 +37,11 @@ module.exports =(bot, ipcMain)=>{
                 botResponse.name = bot.user.username;
                 botResponse.action="destroy";
                 event.sender.send('async-bot-reply', JSON.stringify(botResponse))
+            },(err) =>{
+                console.log(err);
             });
         } else if (args.includes('botName')) {
+            // name change is limited and has a cooldown need to see cooldown length1
             const newName = args.split(':')[1].trim();
             console.log('bot name set to: ' + newName);
             bot.user.setUsername(newName);

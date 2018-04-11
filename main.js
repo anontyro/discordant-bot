@@ -23,5 +23,5 @@ require('./discordant/bot-api/index')(bot, ipcMain);
 // electron setup
 require('./discordant/electron-api/index')(app);
 
-// IPC Renderer
+// electron general communcation
 require('./discordant/electron-api/frontend-api/index')(ipcMain);

@@ -22,7 +22,7 @@ export class MainLandingViewComponent implements OnInit {
   ngOnInit() { }
 
   public onButtonPressed() {
-    this.botApiService.sendAsyncMessage('test Message');
+    this.electronApiService.sendAsyncMessage('test Message');
   }
 
   public onBotInitBtn() {
