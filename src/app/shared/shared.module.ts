@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxElectronModule } from 'ngx-electron';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import { NgxElectronModule } from 'ngx-electron';
     BrowserAnimationsModule,
     FormsModule,
     NgxElectronModule,
+    MatButtonModule,
   ],
   declarations: [],
   exports: [
@@ -20,6 +22,7 @@ import { NgxElectronModule } from 'ngx-electron';
     BrowserAnimationsModule,
     FormsModule,
     NgxElectronModule,
+    MatButtonModule,
   ]
 })
 export class SharedModule { }
