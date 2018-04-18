@@ -1,3 +1,5 @@
+import { RoutingModule } from './routing/routing.module';
+import { FeaturesModule } from './features/features.module';
 // Angular Imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -12,30 +14,29 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // Components
 import { AppComponent } from './app.component';
-import { MainLandingViewComponent } from './views/main-landing-view/main-landing-view.component';
+
 
 // Services
-import {BotApiService} from '../services/api/bot-api.service';
-import {DatabaseApiService} from '../services/api/database-api.service';
-import {ElectronApiService} from '../services/api/electron-api.service';
-import { AppStateService } from '../services/app/app-state.service';
-import { MainViewService } from '../services/views/main-view.service';
-import { AuthorizationService } from './../services/auth/authorization.service';
-
-import {AppRoutes} from './app.router';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { BotApiService } from './core/services/api/bot-api.service';
+import { DatabaseApiService } from './core/services/api/database-api.service';
+import { ElectronApiService } from './core/services/api/electron-api.service';
+import { AppStateService } from './core/services/app/app-state.service';
+import { AuthorizationService } from './core/services/auth/authorization.service';
+import { MainViewService } from './core/services/views/main-view.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainLandingViewComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(AppRoutes),
-    FormsModule,
-    NgxElectronModule,
+
+    CoreModule,
+    FeaturesModule,
+    RoutingModule,
+    SharedModule,
     NgbModule.forRoot(),
   ],
   providers: [

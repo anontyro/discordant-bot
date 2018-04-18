@@ -1,7 +1,8 @@
-import { BotApiService } from './../../../services/api/bot-api.service';
-import { ElectronApiService } from './../../../services/api/electron-api.service';
+
 import { Component, OnInit } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
+import { ElectronApiService } from '../../../core/services/api/electron-api.service';
+import { BotApiService } from '../../../core/services/api/bot-api.service';
 
 @Component({
   selector: 'app-main-landing-view',

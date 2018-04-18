@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
+import { BotApiStatics } from '../../../../data/botApiStatics';
 
-import { BotApiStatics } from './../../data/botApiStatics';
 
 @Injectable()
 export class BotApiService {
