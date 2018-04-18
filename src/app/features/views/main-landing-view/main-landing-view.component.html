@@ -1,5 +1,19 @@
 <div class="main-landing-container">
-  <h1>Landing page</h1>
+  <div class="main-topbar">
+    <app-topbar></app-topbar>
+  </div>
+  <div class="main-landing-content">
+    <div class="main-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<div class="main-footer">
+  <app-footer></app-footer>
+</div>
+
+
+  <!-- <h1>Landing page</h1>
   <button type="button" name="test" (click)="onButtonPressed()"  class="btn btn-dark btn-lg btn-block">
     Test
   </button>
@@ -15,5 +29,4 @@
     <button type="button" name="name" (click)="onBotNamePress()"  class="btn btn-dark btn-lg btn-block">
       Set Name
     </button>
-  </div>
-</div>
+  </div> -->
