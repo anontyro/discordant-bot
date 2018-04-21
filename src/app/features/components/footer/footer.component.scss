@@ -1,0 +1,9 @@
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .middle{
+        width: 40%;
+    }
+}
