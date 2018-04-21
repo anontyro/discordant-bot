@@ -23,7 +23,7 @@ export class BotApiService {
     });
   }
 
-  private listenForMessagesObservable(): Observable<any> {
+  public listenForMessagesObservable(): Observable<any> {
     return Observable.create(observer => {
       this.electronService.ipcRenderer.on(BotApiStatics.message.asyncReply, (event, arg) => {
         if (arg) {

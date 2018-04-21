@@ -14,7 +14,16 @@
       </mat-form-field>
     </div>
     <div class="quick-start">
-      <button mat-button color="primary">Start</button>
+      <button mat-button color="primary" 
+      (click)="onBotInitBtn()"
+      *ngIf="!initBot">
+        Start
+      </button>
+      <button mat-button color="primary"
+      (click)="onBotInitBtn()"
+       *ngIf="initBot">
+        Destroy
+      </button>
     </div>
     <div class="menu-icon">
       <i class="material-icons">menu</i>
