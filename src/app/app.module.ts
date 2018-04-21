@@ -1,3 +1,4 @@
+import { MaterialDesignModule } from './material-design/material-design.module';
 import { RoutingModule } from './routing/routing.module';
 import { FeaturesModule } from './features/features.module';
 // Angular Imports
@@ -5,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { DatePipe } from '@angular/common';
+import { DatePipe, CommonModule } from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 // third party
@@ -32,11 +33,13 @@ import { MainViewService } from './core/services/views/main-view.service';
     AppComponent,
   ],
   imports: [
-
+    BrowserAnimationsModule,
+    CommonModule,
     CoreModule,
     FeaturesModule,
     RoutingModule,
     SharedModule,
+    MaterialDesignModule,
     NgbModule.forRoot(),
   ],
   providers: [

@@ -1,3 +1,23 @@
-<p>
-  topbar works!
-</p>
+<div class="topbar">
+  <div class="topbar-content">
+    <div class="logo">
+      DISCORDANT
+    </div>
+    <div class="middle">
+  
+    </div>
+    <div class="quick-select">
+      <mat-form-field >
+        <mat-select [(value)] = "quickSelection" (selectonChange)="onQuickSelectChange($event)">
+            <mat-option value = "test">Test</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="quick-start">
+      <button mat-button color="primary">Start</button>
+    </div>
+    <div class="menu-icon">
+      <i class="material-icons">menu</i>
+    </div>
+  </div>
+</div>

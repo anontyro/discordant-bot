@@ -1,3 +1,4 @@
+import { MaterialDesignModule } from './../material-design/material-design.module';
 import { mainRoutes } from './views/main-landing-view/routing/main.route';
 import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
   imports: [
     CommonModule,
     SharedModule,
+    MaterialDesignModule,
     RouterModule.forChild(mainRoutes),
   ],
   declarations: [

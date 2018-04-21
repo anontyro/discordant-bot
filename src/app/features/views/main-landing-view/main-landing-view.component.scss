@@ -1,6 +1,13 @@
+@import '~themes/theme-const.scss';
+
+
+.main-landing-content{
+    margin-top: 20px;
+}
+
 .main-footer-container {
     height: 50px;
     padding: 10px;
     margin-top: -50px;
-    background: #7289da;
+    background-color: $primeDiscordColor;
 }

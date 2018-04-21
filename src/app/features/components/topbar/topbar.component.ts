@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopbarComponent implements OnInit {
 
+  public quickSelection: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public onQuickSelectChange(event) {
+    console.log(event);
   }
 
 }

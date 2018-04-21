@@ -1,0 +1,33 @@
+@import '~themes/theme-const.scss';
+
+.gen-style{
+    margin-top: 12px;
+
+}
+
+.topbar-content{
+    display: Flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    .logo{
+        color: $primeDiscordColor;
+        font-weight: 800;
+        font-size: 2em;
+        margin-top: 8px;
+    }
+    .middle{
+        width: 60%;
+    }
+    .quick-start{
+        @extend .gen-style;
+
+    }
+    .menu-icon{
+        @extend .gen-style;
+        i.material-icons{
+            font-size: 40px;
+            margin-right: 10px;
+        }
+    }
+}
